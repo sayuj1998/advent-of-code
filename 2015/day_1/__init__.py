@@ -11,3 +11,13 @@ def part_1():
     return start
 print(part_1())
 
+def part_2():
+    current_floor = 0
+    for index in range(len(data)):
+        if data[index] == ")":
+            current_floor -= 1
+        if data[index] == "(":
+            current_floor += 1
+        if current_floor == -1:
+            return index + 1
+print(part_2())
