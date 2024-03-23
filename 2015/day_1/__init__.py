@@ -6,7 +6,7 @@ def part_1():
     for char in data:
         if char == "(":
             start += 1
-        if char == ")":
+        elif char == ")":
             start -= 1
     return start
 print(part_1())
@@ -16,8 +16,9 @@ def part_2():
     for index in range(len(data)):
         if data[index] == ")":
             current_floor -= 1
-        if data[index] == "(":
+            if current_floor == -1:
+                return index + 1
+        elif data[index] == "(":
             current_floor += 1
-        if current_floor == -1:
-            return index + 1
+
 print(part_2())
