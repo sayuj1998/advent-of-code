@@ -1,7 +1,7 @@
 with open("data.txt") as f:
     data = f.read()
 
-def part_1():
+def part_1()->int:
     start = 0
     for char in data:
         if char == "(":
@@ -11,7 +11,7 @@ def part_1():
     return start
 print(part_1())
 
-def part_2():
+def part_2()->int:
     current_floor = 0
     for index in range(len(data)):
         if data[index] == ")":
