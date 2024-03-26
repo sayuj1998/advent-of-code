@@ -22,8 +22,7 @@ class Building:
                 current_floor += 1
         return current_floor
 
-which_floor = Building(data)
-basement_floor = Building(data)
+building = Building(data)
 
-print(which_floor.calculate_floor())
-print(basement_floor.basement_position())
+print(building.calculate_floor())
+print(building.basement_position())
