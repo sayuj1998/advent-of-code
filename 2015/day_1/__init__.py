@@ -1,24 +1,29 @@
 with open("data.txt") as f:
     data = f.read()
+class Building:
+    def __init__(self, data: str):
+        self.data = data
+    def calculate_floor(self) -> int:
+        start = 0
+        for char in self.data:
+            if char == "(":
+                start += 1
+            elif char == ")":
+                start -= 1
+        return start
+    def basement_position(self)->int:
+        current_floor = 0
+        for index in range(len(self.data)):
+            if data[index] == ")":
+                current_floor -= 1
+                if current_floor == -1:
+                    return index + 1
+            elif data[index] == "(":
+                current_floor += 1
+        return current_floor
 
-def part_1()->int:
-    start = 0
-    for char in data:
-        if char == "(":
-            start += 1
-        elif char == ")":
-            start -= 1
-    return start
-print(part_1())
+which_floor = Building(data)
+basement_floor = Building(data)
 
-def part_2()->int:
-    current_floor = 0
-    for index in range(len(data)):
-        if data[index] == ")":
-            current_floor -= 1
-            if current_floor == -1:
-                return index + 1
-        elif data[index] == "(":
-            current_floor += 1
-
-print(part_2())
+print(which_floor.calculate_floor())
+print(basement_floor.basement_position())
