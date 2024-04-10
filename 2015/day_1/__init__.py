@@ -1,8 +1,10 @@
 with open("data.txt") as f:
     data = f.read()
+
 class Building:
     def __init__(self, data: str):
         self.data = data
+
     def calculate_floor(self) -> int:
         start = 0
         for char in self.data:
