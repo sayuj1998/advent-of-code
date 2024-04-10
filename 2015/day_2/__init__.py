@@ -5,6 +5,7 @@ dimensions = [int(num) for lines in data.splitlines() for num in lines.split("x"
 class Rectangle:
     def __init__(self, l: int, w: int, h: int):
         self.data = [l, w, h]
+
     def wrapping_paper(self) -> int:
         l, w, h = self.data
         surface_area = 2*l*w + 2*w*h + 2*h*l
@@ -28,5 +29,6 @@ for index in range(0, len(dimensions), 3):
     total_ribbon += gift.ribbon()
 print(total_wrapping)
 print(total_ribbon)
+
 
 
